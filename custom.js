@@ -1,12 +1,17 @@
+const h1 = document.createElement('h1')
 
-    var form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+ 
 
-        var inputText = document.getElementById('inputText').value;
-        document.write("<p>Vous avez saisi : " + inputText + "</p>");
+const params = new URLSearchParams(window.location.search)
 
-        window.setTimeout(function() {
-            window.location.reload();
-        }, 5000);
-    });
+ 
+
+const mister = params.get('name')
+
+ 
+
+h1.innerHTML = `Hello ${mister}`
+
+ 
+
+document.querySelector('body').appendChild(h1)
